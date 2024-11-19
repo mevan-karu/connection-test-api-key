@@ -1,0 +1,141 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Reward Management API",
+      "description": "An API to handle reward selections.",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/select-reward": {
+        "post": {
+          "summary": "Handle Reward Selection",
+          "description": "Accepts a POST request with the user's reward selection and processes it.",
+          "requestBody": {
+            "description": "User reward selection data",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RewardSelection"
+                }
+              }
+            }
+          },
+          "responses": {
+            "202": {
+              "description": "Reward selection received successfully",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string",
+                    "example": "reward selection received successfully"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request payload",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string",
+                    "example": "invalid request payload"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error or unable to send reward selection to vendor management API",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string",
+                    "example": "unable to send reward selection to vendor management api"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "User": {
+          "type": "object",
+          "properties": {
+            "UserId": {
+              "type": "string",
+              "description": "User ID",
+              "example": "U0000"
+            },
+            "FirstName": {
+              "type": "string",
+              "description": "User's first name",
+              "example": "John"
+            },
+            "LastName": {
+              "type": "string",
+              "description": "User's last name",
+              "example": "Doe"
+            },
+            "Email": {
+              "type": "string",
+              "description": "User's email address",
+              "example": "john@example.com"
+            }
+          }
+        },
+        "RewardSelection": {
+          "type": "object",
+          "properties": {
+            "UserId": {
+              "type": "string",
+              "description": "User ID making the selection",
+              "example": "U0000"
+            },
+            "SelectedRewardDealId": {
+              "type": "string",
+              "description": "ID of the selected reward deal",
+              "example": "RWD0000"
+            },
+            "AcceptedTnC": {
+              "type": "boolean",
+              "description": "Indicates if the user has accepted the terms and conditions",
+              "example": true
+            }
+          }
+        },
+        "Reward": {
+          "type": "object",
+          "properties": {
+            "RewardId": {
+              "type": "string",
+              "description": "Reward ID",
+              "example": "RWD0000"
+            },
+            "UserId": {
+              "type": "string",
+              "description": "User ID",
+              "example": "U0000"
+            },
+            "FirstName": {
+              "type": "string",
+              "description": "User's first name",
+              "example": "John"
+            },
+            "LastName": {
+              "type": "string",
+              "description": "User's last name",
+              "example": "Doe"
+            },
+            "Email": {
+              "type": "string",
+              "description": "User's email address",
+              "example": "john@example.com"
+            }
+          }
+        }
+      }
+    }
+  }
