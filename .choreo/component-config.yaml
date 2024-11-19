@@ -35,7 +35,7 @@ spec:
     # +optional Defines the service references from the internal API marketplace.
     serviceReferences:
     - name: choreo:///mevanchoreo/api-key-test/connection-test-loyalty-s/5c69c/v1/ORGANIZATION
-      connectionConfig: 01efa646-1743-1906-91d6-cce87c240f22
+      connectionConfig: 01efa648-35aa-18b0-9ba2-a465beef8b94
       env:
       - from: ServiceURL
         to: LOYALTY_API_URL
