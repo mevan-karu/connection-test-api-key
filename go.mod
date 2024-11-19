@@ -1,6 +1,6 @@
 module reward-management-api-golang
 
-go 1.21
+go 1.21.11
 
 require (
 	github.com/gorilla/mux v1.8.0
