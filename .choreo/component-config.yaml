@@ -42,5 +42,3 @@ spec:
         to: LOYALTY_API_URL
       - from: ChoreoAPIKey
         to: CHOREO_API_KEY
-      - from: TokenURL
-        to: TOKEN_URL
